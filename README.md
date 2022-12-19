@@ -1,24 +1,44 @@
 # Capstone-Project-Epicode
 Progetto finale per il diploma da Front-End Developer | Epicode
 
-OPZIONE 1: SAAS per la gestione di IMMOBILI
-- Tipologia: Software
+NFT eCommerce: (es. opensea.io, zuse.market, solanart.io)
+- Tipologia: eCommerce SPA
 
 Struttura:
-Landing Page singola + anchorpoint: (es. miogest.com, ohlalandlord.com, climbo.com)
+
+V.1
+ 
 - Navbar:
-  - Logo (#Home, presentazione);
-  - Dettagli (descrizione);
-  - Prezzi (prezzi);
-  - Portali (? integrazioni);
-  - Chi siamo (descrizione azienda)
-  - Contatti (mail, footer)
-  - Login
+  - Home (Home, presentazione, top collections, FAQs);
+  - Marketplace (unordered list of recently listed NFTs);
+  - Collections (Stats, list of the top NFT collections);
+  - Sold (unordered list of recently purchased NFTs);
+  - Profile (login, logout, NFTs owned, NFTs on sale, Activities)
 
 - Login:
-  - Accedi (email, pw) (auth? angular?);
-  - Registrati (registration form, nome, cognome, email, password, ecc)
+  - Accedi (pw, wallet ID) (auth? angular?);
+  - Registrati (registration form, email, password, wallet ID ecc)
+  - Area privata
   
-- User:
-  - Dashboard ()
+V.2
+  
+- Pagine dettaglio (prodotto):
+  - Nome
+  - Prezzo
+  - Descrizione
+  - Storico transazioni (?)
+  
+- Marketplace:
+  - Popolazione pagina marketplace attraverso json
+  - possibilità di filtrare e/o ricercare gli NFT
+  
+V.3
  
+- Pagina collezioni:
+  - Lista delle collezioni 
+  - Ordine in base al volume/volume 24h, floor price
+  
+V.4
+
+- Pagina sold: ultimi NFT venduti
+  
