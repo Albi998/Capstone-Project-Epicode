@@ -1,0 +1,27 @@
+<div class="container w-md-25">
+    <div class="my-5">
+        <h2 class="text-center">Register</h2>
+        <form #signupform="ngForm" (ngSubmit)="onSubmit(signupform)">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" ngModel>
+            </div>
+            <!-- <p *ngIf="loginform.get('username')?.touched">Username required!</p> -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" ngModel required>
+            </div>
+            <!-- <p *ngIf="loginform.get('email')?.touched">Email required!</p> -->
+            <div class="mb-5">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" ngModel required>
+            </div>
+            <button type="submit" class="button w-25" [disabled]="!signupform.valid">Submit</button>
+            <!-- [disabled]="!signupform.valid" -->
+        </form>
+    </div>
+</div>

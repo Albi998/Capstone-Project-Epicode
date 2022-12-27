@@ -1,0 +1,18 @@
+<div class="container w-md-25">
+    <div class="my-5">
+        <h2 class="text-center">Login</h2>
+        <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" ngModel>
+            </div>
+
+            <div class="mb-5">
+                <label for="name" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" ngModel required>
+            </div>
+            <button type="submit" class="button w-25" [disabled]="!loginform.valid">Submit</button>
+
+        </form>
+    </div>
+</div>

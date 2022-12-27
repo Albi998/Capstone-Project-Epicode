@@ -1,0 +1,119 @@
+<nav class="navbar sticky-top navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand me-5" href="#"><img src="../assets/img/NFT_LOGO.png" width="200px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex-lg justify-content-between" id="navbarSupportedContent">
+            <form class="col-4 mt-5 mt-lg-0  mb-3 mb-lg-0 ms-4 ms-md-0" role="search">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search">
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="marketplace">Marketplace</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="collections">Collections</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="stats">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="profile">Login <i
+                        class="fa-solid fa-right-from-bracket"></i> </a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item mb-3" routerLink="profile"><i
+                                    class="fa-solid fa-user me-3"></i>Profile</a></li>
+                        <li><a class="dropdown-item mb-3" href="#"><i class="fa-solid fa-heart me-3"></i>Favorites</a>
+                        </li>
+                        <li><a class="dropdown-item mb-3" routerLink="users"><i
+                                    class="fa-solid fa-gear me-3"></i>Settings</a>
+                        </li>
+                        <li><a class="dropdown-item mb-3" href="#"><i class="fa-solid fa-moon me-3"></i>Dark mode</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" routerLink="signup"><i
+                                    class="fa-solid fa-right-from-bracket me-3"></i>Logout</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <div class="footer container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#"><img src="../assets/img/NFT_LOGO.png" width="200px"></a>
+                    <p class="mt-5">NFTWorld is a digital marketplace for crypto collectibles and
+                        non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
+                </div>
+                <div class="col-md-4 footer-list d-flex justify-content-md-center">
+                    <ul class="footer-ul mt-3">
+                        <h5>Menu</h5>
+                        <li>
+                            <a routerLink="/">Home</a>
+                        </li>
+                        <li>
+                            <a routerLink="marketplace">Marketplace</a>
+                        </li>
+                        <li>
+                            <a routerLink="collections">Collections</a>
+                        </li>
+                        <li>
+                            <a routerLink="stats">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-list d-flex justify-content-md-center">
+                    <ul class="footer-ul mt-3">
+                        <h5>Join the community</h5>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-twitter me-3"></i>Twitter</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram me-3"></i>Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook me-3"></i>Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-discord me-3"></i>Discord</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-reddit-alien me-3"></i>Reddit</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-youtube me-3"></i>YouTube</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-envelope me-3"></i>Email</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="pt-3">
+                <h6>&copy; Copyright 2022</h6>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,44 +1,27 @@
-# Capstone-Project-Epicode
-Progetto finale per il diploma da Front-End Developer | Epicode
+# CapstoneProject
 
-NFT eCommerce: (es. opensea.io, zuse.market, solanart.io)
-- Tipologia: eCommerce SPA
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
-Struttura:
+## Development server
 
-V.1
- 
-- Navbar:
-  - Home (Home, presentazione, top collections, FAQs);
-  - Marketplace (unordered list of recently listed NFTs);
-  - Collections (Stats, list of the top NFT collections);
-  - Sold (unordered list of recently purchased NFTs);
-  - Profile (login, logout, NFTs owned, NFTs on sale, Activities)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-- Login:
-  - Accedi (pw, wallet ID) (auth? angular?);
-  - Registrati (registration form, email, password, wallet ID ecc)
-  - Area privata
-  
-V.2
-  
-- Pagine dettaglio (prodotto):
-  - Nome
-  - Prezzo
-  - Descrizione
-  - Storico transazioni (?)
-  
-- Marketplace:
-  - Popolazione pagina marketplace attraverso json
-  - possibilità di filtrare e/o ricercare gli NFT
-  
-V.3
- 
-- Pagina collezioni:
-  - Lista delle collezioni 
-  - Ordine in base al volume/volume 24h, floor price
-  
-V.4
+## Code scaffolding
 
-- Pagina sold: ultimi NFT venduti
-  
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
