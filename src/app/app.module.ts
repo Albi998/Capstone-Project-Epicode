@@ -1,46 +1,52 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// MODULES
+
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat'
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
+// COMPONENTS
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './componenti/home/home.component';
-import { MarketplaceComponent } from './componenti/marketplace/marketplace.component';
-import { StatsComponent } from './componenti/stats/stats.component';
-import { CollectionsComponent } from './componenti/collections/collections.component';
-import { ProfileComponent } from './componenti/profile/profile.component';
-import { CardComponent } from './componenti/item/card/card.component';
-import { SignupComponent } from './componenti/signup/signup.component';
-import { UsersComponent } from './componenti/users/users.component';
-import { LoginComponent } from './componenti/login/login.component';
-import { FavoritesComponent } from './componenti/favorites/favorites.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { environment } from 'src/environments/environment';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CardComponent } from './items/card/card.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        MarketplaceComponent,
-        StatsComponent,
-        CollectionsComponent,
-        ProfileComponent,
-        CardComponent,
-        SignupComponent,
-        UsersComponent,
-        LoginComponent,
-        FavoritesComponent,
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        FormsModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    VerifyEmailComponent,
+    PasswordRecoveryComponent,
+    SpinnerComponent,
+    NavbarComponent,
+    FooterComponent,
+    CardComponent,
+    ProfileComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

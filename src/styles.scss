@@ -1,3 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // BODY
@@ -10,6 +11,7 @@
     --text-black-700: #797889;
     --skin-color-1: #7ae0a4;
     --skin-color-2: #2271a5;
+    --skin-color-3: #1d5f8b;
 }
 
 body.dark {
@@ -88,11 +90,24 @@ h6 {
     border: none;
 }
 
-.button:hover {
+.btn-outline {
+    background-color: var(--bg-black-100);
+    color: var(--skin-color-2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--skin-color-2);
+}
+
+.btn-outline:hover {
     background-color: var(--skin-color-2);
     color: var(--bg-black-100);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    border: 1px solid var(--skin-color-2);
+}
+
+.button:hover {
+    background-color: var(--skin-color-3);
 }
 
 .static-btn {

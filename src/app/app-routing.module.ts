@@ -1,29 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { HomeComponent } from './componenti/home/home.component';
-import { MarketplaceComponent } from './componenti/marketplace/marketplace.component';
-import { StatsComponent } from './componenti/stats/stats.component';
-import { CollectionsComponent } from './componenti/collections/collections.component';
-import { ProfileComponent } from './componenti/profile/profile.component';
-import { SignupComponent } from './componenti/signup/signup.component';
-import { UsersComponent } from './componenti/users/users.component';
-import { LoginComponent } from './componenti/login/login.component';
-import { AuthGuard } from './auth/auth.guard';
-import { FavoritesComponent } from './componenti/favorites/favorites.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RegisterComponent } from './components/register/register.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'marketplace', component: MarketplaceComponent },
-    { path: 'stats', component: StatsComponent },
-    { path: 'collections', component: CollectionsComponent },
-    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard] },
-    { path: 'signup', component: SignupComponent },
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'password-recovery', component: PasswordRecoveryComponent },
+    { path: 'verify-email', component: VerifyEmailComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: '**', redirectTo: 'dashboard', pathMatch: 'full'  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
