@@ -1,0 +1,60 @@
+.nft-detail {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.price {
+    background-color: var(--bg-black-100);
+    color: var(--skin-color-2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--skin-color-2);
+}
+
+.button-buy {
+    width: 100%;
+    background-color: var(--skin-color-2);
+    color: var(--bg-black-100);
+    font-size: larger;
+    padding: 18px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.button-buy:hover {
+    background-color: var(--skin-color-3);
+}
+
+.attribute {
+    text-align: center;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--skin-color-2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.attribute p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.details p {
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    display: flex;
+    justify-content: space-between;
+}
+
+.details p span {
+    color: var(--skin-color-2);
+
+}

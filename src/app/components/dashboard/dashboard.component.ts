@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+
 
 @Component({
     selector: 'app-dashboard',
@@ -12,15 +12,33 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class DashboardComponent implements OnInit {
 
     homeform!: FormGroup
-    constructor(private firebase: FirebaseService) {
+    nfts: any;
+    randomIndex = 0;
+
+    constructor(
+        private firebase: FirebaseService,
+        private http: HttpClient,
+    ) {
 
     }
 
     ngOnInit(): void {
+        this.getNfts()
         this.homeform = new FormGroup({
             email: new FormControl(null, Validators.email)
         })
     }
+
+    //Chiamata a mockAPI
+
+    getNfts() {
+        this.http.get('https://63bd1526fa38d30d85d88179.mockapi.io/NFT/v1/metadata').subscribe((data) => {
+            this.nfts = data
+            this.randomIndex = Math.floor(Math.random() * this.nfts.length)
+        })
+    }
+
+    // Iscriviti alla Newsletter
 
     onSubmit() {
         console.log(this.homeform)

@@ -22,6 +22,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './items/card/card.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MarketplaceComponent } from './components/marketplace/marketplace.component';
+import { NftDetailsComponent } from './components/nft-details/nft-details.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     NavbarComponent,
     FooterComponent,
     CardComponent,
-    ProfileComponent
+    ProfileComponent,
+    MarketplaceComponent,
+    NftDetailsComponent
   ],
   imports: [
     BrowserModule,
