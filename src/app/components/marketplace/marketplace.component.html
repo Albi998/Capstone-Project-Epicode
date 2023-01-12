@@ -28,13 +28,13 @@
     <!-- <app-spinner *ngIf="loading" class="my-5"></app-spinner> -->
     <div class="container my-5" id="marketplace">
 
-        <div class="card cards mb-4" *ngFor="let nft of nfts; let id = index" id="cards">
+        <div class="card cards mb-4" *ngFor="let nft of nfts" id="cards">
             <img src="{{nft.image}}" class="card-img-top">
             <div class="card-body">
                 <h4 class="nft-title">{{nft.name}}</h4>
                 <!-- <p>{{nft.attributes.trait_type}}</p> -->
                 <a class="nft-collection mb-3" routerLink="/">{{nft.creator}}</a>
-                <p>Price: <span>300 ℏ</span></p>
+                <p>Price: <span>{{nft.price}} ℏ</span></p>
                 <button class="button heart text-end"><i class="fa-solid fa-heart"></i></button>
                 <a routerLink="/nft-details/{{nft.dna}}" class="stretched-link"></a>
             </div>

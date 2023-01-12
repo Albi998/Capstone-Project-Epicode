@@ -45,7 +45,7 @@
             </div>
             <div class="price mt-5">
                 <p>Current price</p>
-                <h3><i class="fa-solid fa-tag me-3"></i>300 ℏ</h3>
+                <h3><i class="fa-solid fa-tag me-3"></i>{{getNft.price}} ℏ</h3>
             </div>
             <button class="button-buy mt-3">Buy this NFT</button>
             <div class="card mt-5">
@@ -75,13 +75,13 @@
                 <div class="card-body">
                     <h5 class="my-3"><i class="fa-solid fa-pen-to-square me-3"></i>Details</h5>
                     <div class="details">
-                        <p>Token ID<span>0.0.828996</span></p>
+                        <p>Token ID<span>{{getNft.token_id}}</span></p>
                         <p>Serial number<span>#{{getNft.edition}}</span></p>
                         <p>Supply<span>{{getNft.supply}}</span></p>
-
-                        <p>Royalties<span>10%</span></p>
-                        <p>Fallback fees<span>100 ℏ</span></p>
-
+                        <div>
+                            <p>Royalties<span>{{getNft.royalties.numerator}}%</span></p>
+                            <p>Fallback fees<span>{{getNft.royalties.fallbackFee}} ℏ</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
