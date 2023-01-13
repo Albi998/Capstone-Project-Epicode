@@ -24,6 +24,7 @@ import { CardComponent } from './items/card/card.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MarketplaceComponent } from './components/marketplace/marketplace.component';
 import { NftDetailsComponent } from './components/nft-details/nft-details.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NftDetailsComponent } from './components/nft-details/nft-details.compon
     CardComponent,
     ProfileComponent,
     MarketplaceComponent,
-    NftDetailsComponent
+    NftDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

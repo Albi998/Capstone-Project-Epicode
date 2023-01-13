@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         this.afAuth
             .signInWithEmailAndPassword(email, password)
             .then((user) => {
-                localStorage.setItem('token', 'true');
+                localStorage.setItem('user', 'true');
                 if (user.user?.emailVerified) {
                     this.router.navigate(['/dashboard']);
                 } else {

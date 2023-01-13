@@ -15,13 +15,14 @@
             <!-- CARD provvisoria | verrà popolata dall'API -->
 
             <div class="card cards card-p">
-                <img src="{{nfts[randomIndex].image}}" class="card-img-top">
+                <div>
+                    <a routerLink="/nft-details/{{nfts[randomIndex].dna}}"><img src="{{nfts[randomIndex].image}}" class="card-img-top"></a>
+                </div>
                 <div class="card-body">
                     <h4 class="nft-title">{{nfts[randomIndex].name}}</h4>
-                    <a class="nft-collection mb-3">{{nfts[randomIndex].creator}}</a>
+                    <a class="nft-collection mb-3" routerLink="/">{{nfts[randomIndex].creator}}</a>
                     <p>Price: <span>{{nfts[randomIndex].price}} ℏ</span></p>
                     <button class="button heart text-end"><i class="fa-solid fa-heart"></i></button>
-                    <a routerLink="/nft-details/{{nfts[randomIndex].dna}}" class="stretched-link"></a>
                 </div>
             </div>
 

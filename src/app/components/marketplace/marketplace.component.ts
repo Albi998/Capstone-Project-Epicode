@@ -27,4 +27,13 @@ export class MarketplaceComponent implements OnInit {
 
     }
 
+    // SEARCH METHOD
+
+    searchText: string = '';
+
+onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    // console.log(searchValue)
+}
+
 }

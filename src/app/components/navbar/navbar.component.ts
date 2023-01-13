@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
     selector: 'app-navbar',
@@ -14,27 +14,18 @@ export class NavbarComponent implements OnInit {
     constructor(
         private afAuth: AngularFireAuth,
         private router: Router,
-        private auth: AuthService
     ) {}
 
     ngOnInit(): void {
-        // this.afAuth.currentUser.then((user) => {
-        //     if (user && user.emailVerified) {
-        //         this.dataUser = user;
-        //     } else {
-        //         this.router.navigate(['/login']);
-        //     }
-        // });
+
     }
 
     logout() {
         this.afAuth.signOut().then(() => {
-            localStorage.removeItem('token');
+            localStorage.removeItem('user');
             this.router.navigate(['/login']);
         });
 
-        // LogOut() {
-        //     this.afAuth.signOut().then(() => this.router.navigate(['/login']));
-        // }
+
     }
 }

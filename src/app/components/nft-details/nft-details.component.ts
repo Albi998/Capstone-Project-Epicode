@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Nft } from 'src/app/models/nfts';
 import { NftsService } from 'src/app/services/nfts.service';
 
@@ -13,16 +13,11 @@ export class NftDetailsComponent implements OnInit {
     getNft: any | Nft
     constructor(
         private activeRoute: ActivatedRoute,
-        private nft: NftsService
+        private nft: NftsService,
+        private router: Router,
     ) { }
 
     ngOnInit(): void {
-        // this.nft.getNfts().subscribe((res) => {
-        //     console.log(res)
-        //     if (res) {
-        //         this.getNfts = res
-        //     }
-        // })
 
         let nftDna = this.activeRoute.snapshot.paramMap.get('dna')
         console.log(nftDna);
@@ -30,6 +25,16 @@ export class NftDetailsComponent implements OnInit {
             console.log(res)
             this.getNft = res
         })
+    }
+
+    addToCart() {
+        if (this.getNft) {
+            if (!localStorage.getItem('user')) {
+                this.nft.localAddToCart(this.getNft)
+            }
+            // console.log(this.getNft)
+        }
+
     }
 
 }
