@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5 pe-lg-5">
+            <h1>Your cart</h1>
+        </div>
+        <div class="col-md-12 my-5">
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-5 mt-2"><i class="fa-solid fa-cart-shopping me-3"></i>Cart list</h4>
+
+                    <div class="row details mt-3">
+                        <div class="col-3">
+                            <h5>NFT Image</h5>
+                        </div>
+                        <div class="col-3">
+                            <h5>NFT Name</h5>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h5>NFT Price</h5>
+                        </div>
+                        <div class="col-3 text-end pb-3">
+
+                        </div>
+                    </div>
+
+                    <div class="row details mt-3" *ngFor="let item of cartData">
+                        <div class="col-3">
+                           <a routerLink="/nft-details/{{item.dna}}"><img src="{{item.image}}" class="mb-3"></a>
+                        </div>
+                        <div class="col-3">
+                            <p>{{item.name}}</p>
+                        </div>
+                        <div class="col-3 text-center">
+                            <p>{{item.price}} ℏ</p>
+                        </div>
+                        <div class="col-3 text-end pb-3">
+                            <button type="button" class="btn-outline" (click)="removeToCart(item.id)"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="row details mb-2 mt-4">
+                        <div class="col-3 mb-2">
+                            <p>Taxes</p>
+                        </div>
+                        <div class="col-3">
+
+                        </div>
+                        <div class="col-3 text-center mb-2">
+                            <p>2%</p>
+                        </div>
+                        <div class="col-3 text-end pb-3">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row details mb-2 mt-4">
+                        <div class="col-3 mb-3">
+                            <h5>Total</h5>
+                        </div>
+                        <div class="col-3 mb-3">
+
+                        </div>
+                        <div class="col-3 text-center mb-3">
+                            <h5>{{cartTotal.price}} ℏ</h5>
+                        </div>
+                        <div class="col-3 text-end pb-3">
+                            <button type="button" class="btn-outline mb-1">Clear cart</button>
+                        </div>
+
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="button mb-1 mt-4" style="width: 100%;">Checkout</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

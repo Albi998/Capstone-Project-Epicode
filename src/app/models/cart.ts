@@ -1,15 +1,15 @@
-export interface Nft {
+export interface Cart {
     dna: any;
     tokenId: number;
     creator: string;
     name: string;
     description: string;
     image: any;
-    id: any;
     supply: number;
     edition: number;
     price: number;
     userId: any;
+    id: any;
     royalties: [
         {
             numerator: number;
@@ -39,4 +39,10 @@ export interface Nft {
         },
     ]
 
+}
+
+export interface Total {
+    price: number;
+    tax: number;
+    total: number;
 }

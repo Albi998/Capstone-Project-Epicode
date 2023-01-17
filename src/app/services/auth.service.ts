@@ -1,48 +1,34 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Route, Router } from '@angular/router';
+import { User } from '../models/user';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
-    constructor(private afAuth: AngularFireAuth, private router: Router) {}
+    user!: User
+    isLoggedIn = true
+    isAdmin = true
+    APIKey = 'AIzaSyBYBfG_xju0WSUqqcSgxQVgJiopgvRtfLQ'
+    signUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.APIKey}`
+    signInUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.APIKey}`
+    constructor(private http: HttpClient) { }
 
-    // LOGIN
-    // login(email: string, password: string) {
-    //     this.afAuth.signInWithEmailAndPassword(email, password).then(
-    //         () => {
-    //             localStorage.setItem('token', 'true');
-    //             this.router.navigate(['/dashboard']);
-    //         },
-    //         (err) => {
-    //             alert(err.message);
-    //             this.router.navigate(['/login']);
-    //         }
-    //     );
-    // }
+    createUser(email: string, uid: string, token: string, expirationDate: Date ) {
+        this.user = new User(email, uid, token, expirationDate)
+        this.isLoggedIn = true
+    }
 
-    // REGISTER
+    signIn(email: string, password: string) {
+        return this.http.post(this.signInUrl, {email: email, password: password, returnSecureToken: true })
+    }
 
-    // register(email: string, password: string) {
-    //     this.afAuth.createUserWithEmailAndPassword(email, password).then(()=>{
-    //         alert('Registration completed');
-    //         this.router.navigate(['/login']);
-    //     }, err=>{
-    //         alert(err.message);
-    //         this.router.navigate(['/register']);
-    //     })
-    // }
 
-    // // LOGOUT
 
-    // logout() {
-    //     this.afAuth.signOut().then(()=>{
-    //         localStorage.removeItem('token')
-    //         this.router.navigate(['/login']);
-    //     }, err=>{
-    //         alert(err.message);
-    //         this.router.navigate(['/register']);
-    //     })
-    // }
+    logout() {
+        this.isLoggedIn = false
+        // this.user = null
+        localStorage.removeItem('user')
+    }
 }

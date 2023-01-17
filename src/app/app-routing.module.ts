@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { MarketplaceComponent } from './components/marketplace/marketplace.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'marketplace', component: MarketplaceComponent },
     { path: 'nft-details/:dna', component: NftDetailsComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'cart', component: CartComponent },
     { path: '**', redirectTo: 'dashboard', pathMatch: 'full'  },
 ];
 

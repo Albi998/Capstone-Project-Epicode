@@ -29,14 +29,16 @@
             </ul>
 
             <div class="ms-auto">
-                <button type="button" class="button position-relative me-4">
+                <button type="button" class="button position-relative me-4" routerLink="/cart" (click)="cartPage()">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      3
+                      {{cartItems}}
                       <span class="visually-hidden">cart item</span>
                     </span>
                   </button>
-                <a class="btn-outline mb-lg-0 mb-3" type="button" (click)="logout()">Logout</a>
+                <!-- <a class="btn-outline mb-lg-0 mb-3" *ngIf="showLogin" type="button" (click)="login()">Login</a> -->
+                <a class="btn-outline mb-lg-0 mb-3" *ngIf="!showLogin" type="button" (click)="logout()">Logout</a>
+
                 <!-- <a class="button" aria-current="page" routerLink="/login" ()>Signup</a> -->
             </div>
         </div>

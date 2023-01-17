@@ -11,8 +11,10 @@ import { AuthService } from 'src/app/services/auth.service';
     styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+
     registerUser: FormGroup;
     loading: boolean = false;
+
     constructor(
         private fb: FormBuilder,
         private afAuth: AngularFireAuth,
@@ -26,21 +28,9 @@ export class RegisterComponent implements OnInit {
             repeatPassword: ['', Validators.required],
         });
     }
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 
-    // register() {
-    //     if (this.email == '') {
-    //         alert('Please enter an email');
-    //         return;
-    //     }
-    //     if (this.password == '') {
-    //         alert('Please enter an email');
-    //         return;
-    //     }
-    //     this.auth.register(this.email, this.password)
-    //     this.email = '';
-    //     this.password = '';
-    // }
+
 
     register() {
         const email = this.registerUser.value.email;
@@ -55,7 +45,7 @@ export class RegisterComponent implements OnInit {
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
                 this.loading = false;
-                this.emailVerification();
+                // this.emailVerification();
             })
             .catch((error) => {
                 this.loading = false;
@@ -63,12 +53,12 @@ export class RegisterComponent implements OnInit {
                 alert(this.firebaseError.codeError(error.code));
             });
     }
-    emailVerification() {
-        this.afAuth.currentUser
-            .then((user) => user?.sendEmailVerification())
-            .then(() => {
-                alert('We sent an email for verification');
-                this.router.navigate(['/login']);
-            });
-    }
+    // emailVerification() {
+    //     this.afAuth.currentUser
+    //         .then((user) => user?.sendEmailVerification())
+    //         .then(() => {
+    //             alert('We sent an email for verification');
+    //             this.router.navigate(['/login']);
+    //         });
+    // }
 }

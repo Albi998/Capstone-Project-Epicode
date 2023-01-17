@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
         this.http.get('https://63bd1526fa38d30d85d88179.mockapi.io/NFT/v1/metadata').subscribe((data) => {
             this.nfts = data
             this.randomIndex = Math.floor(Math.random() * this.nfts.length)
+            // this.nfts.sort(() => Math.random() - 0.5).slice(0,12)
         })
     }
 

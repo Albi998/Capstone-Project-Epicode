@@ -1,11 +1,10 @@
-export interface Nft {
+export interface Favorites{
     dna: any;
     tokenId: number;
     creator: string;
     name: string;
     description: string;
     image: any;
-    id: any;
     supply: number;
     edition: number;
     price: number;
