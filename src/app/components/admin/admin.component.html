@@ -1,0 +1,107 @@
+<app-navbar></app-navbar>
+
+<div class="container my-5">
+
+    <h1 class="mb-4">Your admin profile</h1>
+    <p>Welcome to your personal admin profile!</p>
+
+    <button type="button" class="button mt-3" (click)="logout()">Logout</button>
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container p-0">
+
+            <div class="navbar-collapse mt-4">
+
+                <ul class="navbar-nav mt-0 mt-lg-4">
+                    <li class="nav-item me-5">
+                        <a class="nav-link" aria-current="page" routerLink="/admin">Admin Info</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" aria-current="page" routerLink="/manage-nfts">Manage NFTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/manage-users">Manage Users</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="row my-5" *ngFor="let data of adminData">
+
+        <div class="col-lg-6 mb-4 mb-lg-0 nft-image">
+
+            <img src="{{data.image}}">
+
+        </div>
+
+        <div class="col-lg-6">
+            <h4 class="mb-4">Admin Info</h4>
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h4 class="mb-5 mt-2"><i class="fa-solid fa-cart-shopping me-3"></i>Cart list</h4> -->
+
+                    <div class="row details mt-3">
+                        <div class="col-6">
+                            <p>ID:</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p>{{data.id}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row details mt-3">
+                        <div class="col-6">
+                            <p>Name</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p>{{data.name}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row details mt-3">
+                        <div class="col-6">
+                            <p>Email:</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p>{{data.email}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row details mt-3">
+                        <div class="col-6">
+                            <p>NFT Name:</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p>{{data.nftname}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-6">
+            <h4 class="mb-4">Admin Info</h4>
+
+            <ul class="admin-data mb-5">
+                <li><p>ID: <span>{{data.id}}</span></p></li>
+                <li><p>Name: <span>{{data.name}}</span></p></li>
+                <li><p>Email: <span>{{data.email}}</span></p></li>
+
+            </ul>
+
+        </div> -->
+
+    </div>
+
+
+
+</div>
+
+<app-footer></app-footer>

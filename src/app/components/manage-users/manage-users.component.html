@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="container my-5">
+
+    <h1 class="mb-4">Your admin profile</h1>
+    <p>Welcome to your personal admin profile!</p>
+
+    <button type="button" class="button mt-3" (click)="logout()">Logout</button>
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container p-0">
+
+            <div class="navbar-collapse mt-4">
+
+                <ul class="navbar-nav mt-0 mt-lg-4">
+                    <li class="nav-item me-5">
+                        <a class="nav-link" aria-current="page" routerLink="/admin">Admin Info</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" aria-current="page" routerLink="/manage-nfts">Manage NFTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/manage-users">Manage Users</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+<div class="row my-5">
+    <div class="col-12">
+        <h4 class="mb-4">Manage Users</h4>
+        <div class="card">
+            <div class="card-body">
+                <!-- <h4 class="mb-5 mt-2"><i class="fa-solid fa-cart-shopping me-3"></i>Cart list</h4> -->
+
+                <div class="row details mt-3">
+                    <div class="col-9 mb-3">
+                        <h5>Newsletter subscribers</h5>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <div class="row details mt-3" *ngFor="let client of clients">
+                    <div class="col-9">
+                        <p>{{client.email}}</p>
+                    </div>
+                    <div class="col-3 text-end">
+                        <button type="button" class="btn-outline mb-3" (click)="onDeleteClient(client.id)"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<app-footer></app-footer>

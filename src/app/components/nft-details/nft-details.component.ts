@@ -5,6 +5,7 @@ import { NftsService } from 'src/app/services/nfts.service';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Cart } from 'src/app/models/cart';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { Favorites } from 'src/app/models/favorites';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class NftDetailsComponent implements OnInit {
     getNft: any | Nft
     removeCart = false
     cartData: Nft | undefined
-    FavoritesData: Nft | undefined
+    favoritesData: Nft | undefined
     constructor(
         private activeRoute: ActivatedRoute,
         private nft: NftsService,
@@ -41,7 +42,7 @@ export class NftDetailsComponent implements OnInit {
             if (nftDna && cartData) {
                 let items = JSON.parse(cartData)
                 items = items.filter((item: Nft) => nftDna === item.dna.toString())
-                // console.warn('items', items)
+                console.warn('items', items)
                 if (items.length) {
                     this.removeCart = true
                 }
@@ -68,6 +69,9 @@ export class NftDetailsComponent implements OnInit {
 
 
     addToCart() {
+        if(localStorage.getItem('admin')) {
+            this.router.navigate(['/login'])
+        }
         if (this.getNft) {
             if (!localStorage.getItem('user')) {
                 this.nft.localAddToCart(this.getNft)
@@ -121,33 +125,39 @@ export class NftDetailsComponent implements OnInit {
     }
 
     addFavorites() {
-        if (this.getNft) {
-            if (localStorage.getItem('user')) {
-                this.nft.localAddToCart(this.getNft)
-                this.removeLike = true
-            } else {
-                console.warn('user is logged in')
-                let user = localStorage.getItem('user')
-                let userId = user && JSON.parse(user).uid
-                console.warn(userId)
-                let favorites: Cart = {
-                    ...this.getNft,
-                    productId: this.getNft.dna,
-                    userId
+        // if(localStorage.getItem('admin')) {
+        //     this.router.navigate(['/login'])
+        // }
+        // if(!localStorage.getItem('user')) {
+        //     this.router.navigate(['/login'])
+        // } else {if (this.getNft) {
+        //     if (localStorage.getItem('user')) {
+        //         this.nft.localAddToFavorites(this.getNft)
+        //         this.removeLike = true
+        //     } else {
+        //         console.warn('user is logged in')
+        //         let user = localStorage.getItem('user')
+        //         let userId = user && JSON.parse(user).uid
+        //         console.warn(userId)
+        //         let favoritesData: Favorites = {
+        //             ...this.getNft,
+        //             productId: this.getNft.dna,
+        //             userId
 
-                }
-                console.log(favorites)
-                this.nft.addFavorites(
-                    'https://63c6dcabdcdc478e15cb18f7.mockapi.io/api/v3/favorites', favorites
-                ).subscribe(result => {
-                    if (result) {
-                        this.nft.getFavoritesList(userId)
-                        this.removeLike = true
-                    }
-                })
-            }
+        //         }
+        //         console.log(favoritesData)
+        //         this.nft.addFavorites(
+        //             'https://63c6dcabdcdc478e15cb18f7.mockapi.io/api/v3/favorites', favoritesData
+        //         ).subscribe(result => {
+        //             if (result) {
+        //                 this.nft.getFavoritesList(userId)
+        //                 this.removeLike = true
+        //             }
+        //         })
+        //     }
 
-        }
+        // }}
+
     }
 
     deleteFavorites(nftDna: string) {

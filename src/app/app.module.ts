@@ -26,6 +26,14 @@ import { MarketplaceComponent } from './components/marketplace/marketplace.compo
 import { NftDetailsComponent } from './components/nft-details/nft-details.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CryptoListComponent } from './components/crypto-list/crypto-list.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { ManageUsersComponent } from './components/manage-users/manage-users.component';
+import { ManageNftsComponent } from './components/manage-nfts/manage-nfts.component';
+import { PriceUpdateComponent } from './components/price-update/price-update.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+
 
 
 @NgModule({
@@ -44,7 +52,15 @@ import { CartComponent } from './components/cart/cart.component';
     MarketplaceComponent,
     NftDetailsComponent,
     SearchComponent,
-    CartComponent
+    CartComponent,
+    CryptoListComponent,
+    AdminComponent,
+    AdminLoginComponent,
+    ManageUsersComponent,
+    ManageNftsComponent,
+    PriceUpdateComponent,
+    CheckoutComponent
+
   ],
   imports: [
     BrowserModule,

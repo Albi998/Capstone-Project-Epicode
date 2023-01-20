@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { FirebaseService } from 'src/app/services/firebase.service';
+
 import { NftsService } from 'src/app/services/nfts.service';
 
 
@@ -14,19 +13,30 @@ import { NftsService } from 'src/app/services/nfts.service';
 export class NavbarComponent implements OnInit {
     dataUser: any;
     cartItems = 0;
-    // isLoggedIn = true
-    // isAdmin = true
     showLogin = false;
+    showCart = false;
 
     constructor(
         private afAuth: AngularFireAuth,
         private router: Router,
-        private nftSrv: NftsService,
-        private auth: AuthService,
-        private firebase: FirebaseService
+        private nftSrv: NftsService
+
     ) { }
 
     ngOnInit(): void {
+
+        if (localStorage.getItem('admin')) {
+            this.showCart = true
+        } else {
+            this.showCart = false
+        }
+
+        if (!localStorage.getItem('user')) {
+            this.showLogin = true
+        } else {
+            this.showLogin = false
+        }
+
         let cartData = localStorage.getItem('localCart')
 
         if (cartData) {
@@ -41,35 +51,26 @@ export class NavbarComponent implements OnInit {
     }
 
     logout() {
-        // this.showLogin = true
+
         this.afAuth.signOut().then(() => {
             localStorage.removeItem('user');
-            // localStorage.removeItem('localCart');
             this.router.navigate(['/login']);
-            // this.showLogin = false
         });
-
-
-        // openSignUp(){
-        //     this.showLogin = false
-        // }
-        // openLogin(){
-        //     this.showLogin = true;
-        // }
     }
 
     login() {
+
         this.router.navigate(['/login']);
     }
 
     cartPage() {
-        // this.afAuth.currentUser.then((user) => {
-        //     if (user && user.emailVerified) {
-        //         this.dataUser = user;
-        //     } else {
-        //         this.router.navigate(['/login']);
-        //     }
-        // });
+        let user = localStorage.getItem('user')
+        // console.log(user)
+        if (user) {
+            this.dataUser = user
+        } else {
+            this.router.navigate(['/login']);
+        }
     }
 
 

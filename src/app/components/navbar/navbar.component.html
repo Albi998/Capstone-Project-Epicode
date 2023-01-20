@@ -18,10 +18,10 @@
                     <a class="nav-link" aria-current="page" routerLink="/marketplace">Marketplace</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="">Collections</a>
+                    <a class="nav-link" aria-current="page" routerLink="/crypto-list">Crypto List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="">Stats</a>
+                    <a class="nav-link" aria-current="page" routerLink="/admin-login">Admin</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" routerLink="/profile">Profile</a>
@@ -29,14 +29,14 @@
             </ul>
 
             <div class="ms-auto">
-                <button type="button" class="button position-relative me-4" routerLink="/cart" (click)="cartPage()">
+                <button *ngIf="!showCart" type="button" class="button position-relative me-4" routerLink="/cart" (click)="cartPage()">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {{cartItems}}
                       <span class="visually-hidden">cart item</span>
                     </span>
                   </button>
-                <!-- <a class="btn-outline mb-lg-0 mb-3" *ngIf="showLogin" type="button" (click)="login()">Login</a> -->
+                <a class="btn-outline mb-lg-0 mb-3" *ngIf="showLogin" type="button" (click)="login()">Login</a>
                 <a class="btn-outline mb-lg-0 mb-3" *ngIf="!showLogin" type="button" (click)="logout()">Logout</a>
 
                 <!-- <a class="button" aria-current="page" routerLink="/login" ()>Signup</a> -->
@@ -49,3 +49,4 @@
     </div>
 
 </nav>
+

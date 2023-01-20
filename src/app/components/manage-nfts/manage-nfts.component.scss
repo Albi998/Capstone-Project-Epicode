@@ -1,0 +1,32 @@
+.navbar {
+    background-color: var(--bg-black-900) !important;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.details {
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    align-items: center;
+}
+
+
+.details p span {
+    color: var(--skin-color-2);
+
+}
+
+.details img {
+    width: 100px;
+    border-radius: 6px;
+}
+
+.admin-data {
+    list-style: none;
+    padding-left: 0px;
+
+
+    span {
+        color: var(--skin-color-2);
+    }
+
+}

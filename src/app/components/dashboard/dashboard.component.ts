@@ -49,7 +49,8 @@ export class DashboardComponent implements OnInit {
             .subscribe(data => {
                 console.log(data)
             })
-
+        this.homeform.reset()
+        alert('Email correctly registered!')
     }
 
 }

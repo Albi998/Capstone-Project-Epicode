@@ -1,0 +1,55 @@
+.navbar {
+    background-color: var(--bg-black-900) !important;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.details {
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    align-items: center;
+}
+
+
+.details p span {
+    color: var(--skin-color-2);
+
+}
+
+.details img {
+    width: 100px;
+    border-radius: 6px;
+}
+
+#blue {
+
+    color: var(--skin-color-2);
+
+}
+
+img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nft-image {
+        text-align: center;
+
+        img {
+            border-radius: 100%;
+            border: 1px solid var(--bg-black-50);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nft-image {
+        text-align: center;
+
+        img {
+
+            border-radius: 100%;
+            border: 1px solid var(--bg-black-50);
+        }
+    }
+}

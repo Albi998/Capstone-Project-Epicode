@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5 pe-lg-5">
+            <h1>Crypto List</h1>
+        </div>
+        <div class="col-md-12 my-5">
+
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h4 class="mb-5 mt-2"><i class="fa-solid fa-cart-shopping me-3"></i>Cart list</h4> -->
+
+                    <div class="row details mt-3">
+                        <div class="col-3">
+                            <h5>Logo</h5>
+                        </div>
+                        <div class="col-3">
+                            <h5>Name</h5>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h5>Price</h5>
+                        </div>
+                        <div class="col-3 text-end">
+                            <h5>Ranking</h5>
+                        </div>
+                    </div>
+
+                    <div class="row details mt-3" *ngFor="let coin of finalList">
+                        <div class="col-3">
+                            <a href=""><img src="..." class="mb-3"></a>
+                        </div>
+                        <div class="col-3">
+                            <!-- <p>{{coin.name}}</p> -->
+                        </div>
+                        <div class="col-3 text-center">
+                            <p>Price</p>
+                        </div>
+                        <div class="col-3 text-end">
+                            <p>1</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

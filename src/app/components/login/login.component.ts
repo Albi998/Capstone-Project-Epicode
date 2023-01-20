@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NftsService } from 'src/app/services/nfts.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/models/cart';
 import { Nft } from 'src/app/models/nfts';
-import { User } from 'src/app/models/user';
-import { AuthService } from 'src/app/services/auth.service';
-import { FirebaseErrorService } from 'src/app/services/firebase-error.service';
-import { FirebaseService } from 'src/app/services/firebase.service';
-import { NftsService } from 'src/app/services/nfts.service';
+// import { FirebaseErrorService } from 'src/app/services/firebase-error.service';
+// import { FirebaseService } from 'src/app/services/firebase.service';
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { User } from 'src/app/models/user';
+
 
 // import { getAuth } from "firebase/auth";
 
@@ -27,12 +28,12 @@ export class LoginComponent implements OnInit {
 
 
     constructor(
+        // private firebaseError: FirebaseErrorService,
+        // private afAuth: AngularFireAuth,
+        // private firebase: FirebaseService,
         private fb: FormBuilder,
-        private afAuth: AngularFireAuth,
         private router: Router,
-        private firebaseError: FirebaseErrorService,
         private auth: AuthService,
-        private firebase: FirebaseService,
         private nft: NftsService
     ) {
         this.loginUser = this.fb.group({
@@ -60,6 +61,7 @@ export class LoginComponent implements OnInit {
                 const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
                 this.auth.createUser(data.email, data.localId, data.idToken, data.expiresIn)
                 localStorage.setItem('user', JSON.stringify(this.auth.user))
+                localStorage.removeItem('admin')
                 // console.log(this.auth.user)
                 this.router.navigate(['/dashboard']);
             })

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { FirebaseErrorService } from 'src/app/services/firebase-error.service';
-import { AuthService } from 'src/app/services/auth.service';
+// import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
     selector: 'app-register',
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
         private afAuth: AngularFireAuth,
         private router: Router,
         private firebaseError: FirebaseErrorService,
-        private auth: AuthService
+        // private auth: AuthService
     ) {
         this.registerUser = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
                 this.loading = false;
-                // this.emailVerification();
+                this.emailVerification();
             })
             .catch((error) => {
                 this.loading = false;
@@ -53,12 +53,12 @@ export class RegisterComponent implements OnInit {
                 alert(this.firebaseError.codeError(error.code));
             });
     }
-    // emailVerification() {
-    //     this.afAuth.currentUser
-    //         .then((user) => user?.sendEmailVerification())
-    //         .then(() => {
-    //             alert('We sent an email for verification');
-    //             this.router.navigate(['/login']);
-    //         });
-    // }
+    emailVerification() {
+        this.afAuth.currentUser
+            .then((user) => user?.sendEmailVerification())
+            .then(() => {
+                alert('We sent an email for verification');
+                this.router.navigate(['/login']);
+            });
+    }
 }

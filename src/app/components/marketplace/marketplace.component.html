@@ -27,7 +27,7 @@
 
         <div *ngFor="let nft of nfts" id="cards">
 
-            <div *ngIf="searchText === '' || nft.name.toLowerCase().includes(searchText)">
+            <div *ngIf="searchText === '' || nfts.name.toLowerCase().includes(searchText)">
 
                 <div class="card cards mb-4">
                     <div>

@@ -1,0 +1,35 @@
+// DASHBOARD
+
+#carosello {
+    background-color: var(--bg-black-100);
+    border-bottom: 1px solid var(--bg-black-50);
+    border-top: 1px solid var(--bg-black-50);
+}
+
+@media screen and (max-width: 992px) {
+    .card-4 {
+        display: none;
+    }
+    .card-1, .card-2,.card-3 {
+        width: 33%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .card-3, .card-4 {
+        display: none;
+    }
+    .card-1, .card-2 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .card-2, .card-3, .card-4 {
+        display: none;
+    }
+    .card-1 {
+        width: 100%;
+    }
+}

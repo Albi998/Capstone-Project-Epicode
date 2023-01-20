@@ -1,0 +1,18 @@
+.navbar {
+    background-color: var(--bg-black-100);
+    border-bottom: 1px solid var(--bg-black-50);
+
+    #search {
+        border-radius: 5px;
+        padding: 5px 15px;
+        background: var(--bg-black-900);
+        border: 1px solid var(--bg-black-50);
+        color: var(--text-black-700);
+        transition: all 0.3s ease;
+        width: 300px;
+    }
+
+    #search:focus {
+        box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    }
+}
