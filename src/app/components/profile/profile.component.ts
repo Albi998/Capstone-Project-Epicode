@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,22 +10,28 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
+    thisUser: any
+
     dataUser: any;
 
     constructor(
+        private activeRoute: ActivatedRoute,
         private afAuth: AngularFireAuth,
         private router: Router,
         private auth: AuthService
         ) { }
 
     ngOnInit(): void {
-        let user = localStorage.getItem('user')
-        console.log(user)
+        let user: any = localStorage.getItem('user')
+        // console.log(user)
         if(user) {
             this.dataUser = user
         } else {
             this.router.navigate(['/login']);
         }
+        this.thisUser = JSON.parse(user)
+
+        console.warn(this.thisUser);
     }
 
 }

@@ -1,36 +1,27 @@
-# EpicodeCapstoneProject | NFTWorld 🌍
+# EpicodeCapstoneProject
 
-Progetto creato con angular 14.2.10
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
-## Descrizione 📃
+## Development server
 
-NFTWorld è un eCommerce di NFT creato su Angular. Con questo progetto ho cercato di unire al meglio i miei interessi e le mie competenze di background con le nuove skills di programmazione imparate durante il corso con Epicode. Il progetto si appoggia interamente su API esterne (anche per facilitare la build del progetto), il login viene effettuato con [Firebase](https://firebase.google.com/), l'API che popola la pagina del marketplae invece è una piccola parte di json reale creata da me (a Settembre 2022 mentre lavoravo in ambito NFT) che poi ho caricato su [mockapi.io](https://mockapi.io/). Lo stile del progetto è molto semplice e pulito in modo da rendere il più facile possibile l'utilizzo dell'applicazione. Per la parte grafica ho utilizzato Bootstrap e SASS.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Versioni ✅
+## Code scaffolding
 
-v.1: Versione consegnata e presentata al Demo Day del 25/01/2023.
-- Homepage
-- Newsletter
-- Register/Login
-- Marketplace page
-- Pagina di dettaglio dell'NFT
-- Add/Remove to cart
-- Cart page
-- Checkout
-- Personal profile page
-- Admin profile page
-- Admin data
-- Manage users (Lista degli utenti iscritti alla Newsletter)
-- Manage NFT (cambiare il prezzo degli NFT)
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-v.2: Features da implementare
-- Add/remove to favorites
-- Display dei favorites nella pagina profilp
-- Checkout reale
-- Collections page
-- Filters & pagination
+## Build
 
-## Build 💻
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Digita `npm install` per reinstallare i node modules, successivamente digita `ng serve -o` per lanciare il progetto.
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -21,7 +21,7 @@ export class NftDetailsComponent implements OnInit {
     getNft: any | Nft
     removeCart = false
     cartData: Nft | undefined
-    favoritesData: Nft | undefined
+    // favoritesData: Nft | undefined
     constructor(
         private activeRoute: ActivatedRoute,
         private nft: NftsService,
@@ -37,6 +37,8 @@ export class NftDetailsComponent implements OnInit {
         // console.log(nftDna);
         nftDna && this.nft.getNft(nftDna).subscribe((res: any) => {
             this.getNft = res
+            console.warn(this.getNft);
+
             let nftDna = this.activeRoute.snapshot.paramMap.get('dna')
             let cartData = localStorage.getItem('localCart')
             if (nftDna && cartData) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-checkout',
@@ -10,9 +11,9 @@ export class CheckoutComponent implements OnInit {
 
     checkoutDetails: FormGroup;
 
-    constructor(private fb: FormBuilder,) {
+    constructor(private fb: FormBuilder, private router: Router) {
         this.checkoutDetails = this.fb.group({
-            email: [''],
+            email: ['', [Validators.required, Validators.email]],
             password: [''],
         });
     }
@@ -21,8 +22,9 @@ export class CheckoutComponent implements OnInit {
     }
 
     checkout() {
-        console.log('ciao');
-
+        console.log('checkout effettuato');
+        alert('l\'acquisto è stato completato')
+        this.router.navigate(['/dashboard'])
     }
 
 }

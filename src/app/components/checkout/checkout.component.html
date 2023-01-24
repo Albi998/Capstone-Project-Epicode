@@ -9,10 +9,10 @@
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" formControlName="email">
-                <!-- <h6 *ngIf="checkoutDetails.get('email')?.hasError('required') && checkoutDetails.get('email')?.touched"
+                <h6 *ngIf="checkoutDetails.get('email')?.hasError('required') && checkoutDetails.get('email')?.touched"
                     class="text-danger my-3">The email is required</h6>
                 <h6 *ngIf="checkoutDetails.get('email')?.hasError('email') && checkoutDetails.get('email')?.touched"
-                    class="text-danger my-3">Please enter a correct email format</h6> -->
+                    class="text-danger my-3">Please enter a correct email format</h6>
             </div>
 
             <div class="mb-5">
@@ -25,15 +25,12 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn-outline w-25 me-3" routerLink="/cart">Back to cart</button>
-                <button type="submit" class="button w-25" [disabled]="checkoutDetails.invalid">Checkout</button>
+                <button type="submit" class="btn-outline w-25 me-3" routerLink="/cart">Cart</button>
+                <button type="submit" class="button w-25" [disabled]="checkoutDetails.invalid" (click)="checkout()">Checkout</button>
             </div>
         </form>
         <!-- <app-spinner *ngIf="loading"></app-spinner> -->
-        <p class="mt-5 text-center">Are you a NEW user? <a routerLink="/register">Register</a> now!</p>
-        <div class="text-center mt-3">
-            <a routerLink="/password-recovery">Password recovery</a>
-        </div>
+
     </div>
 </div>
 

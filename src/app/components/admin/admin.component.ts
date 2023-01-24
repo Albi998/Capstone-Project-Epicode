@@ -14,6 +14,9 @@ export class AdminComponent implements OnInit {
 
     clients: any
     adminData: any
+    thisAdmin: any
+
+    dataUser: any;
 
     constructor(
         private router: Router,
@@ -37,7 +40,9 @@ export class AdminComponent implements OnInit {
 
             })
 
-        this.admin.onGetAdminData('https://63c7d30f075b3f3a91d3da35.mockapi.io/api/4/admin').subscribe((data) => {
+
+
+        this.admin.onGetAdminData(`https://63c7d30f075b3f3a91d3da35.mockapi.io/api/4/admin`).subscribe((data) => {
             console.log(data);
 
             this.adminData = data

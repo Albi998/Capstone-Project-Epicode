@@ -28,6 +28,7 @@ export class CartComponent implements OnInit {
 
     ngOnInit(): void {
         this.loadDetails()
+        // this.clearCart()
     }
 
     removeToCart(userId: string | undefined) {
@@ -38,6 +39,11 @@ export class CartComponent implements OnInit {
 
             })
     }
+
+    clearCart() {
+
+    }
+
 
     loadDetails() {
         this.nft.currentCart().subscribe((result) => {

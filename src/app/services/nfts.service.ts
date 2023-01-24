@@ -71,6 +71,10 @@ export class NftsService {
         return this.http.delete(`https://63c5e18be1292e5bea2c33c3.mockapi.io/api/v2/cart/${userId}`)
     }
 
+    // onClearCart(userId: string) {
+    //     return this.http.delete(`https://63c5e18be1292e5bea2c33c3.mockapi.io/api/v2/cart?userId=${userId}`)
+    // }
+
     currentCart() {
         let user = localStorage.getItem('user')
         let userId = user && JSON.parse(user).uid
