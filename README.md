@@ -1,27 +1,31 @@
-# EpicodeCapstoneProject
+# NFTWorld | EpicodeCapstoneProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+Ho deciso di unire le mie competenze ottenute negli ultimi anni riguardanti il mondo crypto ed NFT e le mie nuove skills apprese durante il percorso con Epicode per creare il mio Capstone Project ossia un e-Commerce di NFT. Il progetto è stato realizzato con Angular 14.2.10, la registrazione è il login sono stati realizzati con Firebase Authentication, per l'API degli NFT invece mi sono appoggiato a mockapi.io nella quale ho caricato una piccola parte di un file json reale che ho creato ad Ottobre 2021. 
 
-## Development server
+## Features v.1: Demo Day
+- Register/Login (Firebase authentication)
+- Dashboard + Newsletter (Firebase realtime database)
+- Marketplace page (mockAPI)
+- NFT detail page (mockAPI)
+- Cart/Add to cart (mockAPI)
+- Checkout
+- Admin login (mockAPI)
+- Admin data (mockAPI)
+- Manage users (Firebase realtime database)
+- Manage NFTs (mockAPI)
+- Profile page
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features v.2/3: Future
+- Add favorites
+- Display favorites in the profile page
+- Collections page
+- Filters
+- Pagination
 
-## Code scaffolding
+## Run project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Installa i node modules 
+`npm install`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Lancia il progetto
+`ng serve -o`
