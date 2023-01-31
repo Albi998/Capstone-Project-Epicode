@@ -29,3 +29,6 @@ Installa i node modules
 
 Lancia il progetto
 `ng serve -o`
+
+Esplora la beta:
+(NFTWorld)[https://capstone-register-login.web.app/]
