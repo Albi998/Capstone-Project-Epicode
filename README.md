@@ -31,4 +31,4 @@ Lancia il progetto
 `ng serve -o`
 
 Esplora la beta:
-(NFTWorld)[https://capstone-register-login.web.app/]
+https://capstone-register-login.web.app/
