@@ -1,6 +1,6 @@
 # NFTWorld | EpicodeCapstoneProject
 
-Ho deciso di unire le mie competenze ottenute negli ultimi anni riguardanti il mondo crypto ed NFT e le mie nuove skills apprese durante il percorso con Epicode per creare il mio Capstone Project ossia un e-Commerce di NFT. Il progetto è stato realizzato con Angular 14.2.10, la registrazione è il login sono stati realizzati con Firebase Authentication, per l'API degli NFT invece mi sono appoggiato a mockapi.io nella quale ho caricato una piccola parte di un file json reale che ho creato ad Ottobre 2021. 
+Ho deciso di unire le mie competenze ottenute negli ultimi anni riguardanti il mondo crypto ed NFT e le mie nuove skills apprese durante il percorso con Epicode per creare il mio Capstone Project ossia un e-Commerce di NFT. Il progetto è stato realizzato con Angular 14.2.10, la registrazione ed il login sono stati realizzati con Firebase Authentication, per l'API degli NFT invece mi sono appoggiato a mockapi.io nella quale ho caricato una piccola parte di un file json reale che ho creato ad Ottobre 2021. 
 
 ## Features v.1: Demo Day
 - Register/Login (Firebase authentication)
